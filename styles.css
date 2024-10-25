@@ -1,0 +1,208 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Starting Screen */
+#starting-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 100; /* Ensure it's on top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Indicate that clicking will start the game */
+}
+
+#starting-screen-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: 'VT323', monospace; /* Consistent game font */
+    font-size: 18px;
+}
+
+#starting-screen-content h1 {
+    font-weight: 700; /* Bold for the title */
+}
+
+#starting-screen-content p {
+    font-weight: 400; /* Regular text */
+}
+
+#end-screen-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: 'VT323', monospace; /* Consistent game font */
+    font-size: 14px;
+}
+
+#end-screen-content h1 {
+    font-weight: 700; /* Bold for the title */
+}
+
+#end-screen-content p {
+    font-weight: 400; /* Regular text */
+}
+
+/* Game Wrapper */
+#game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+/* Game Container */
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: black;
+}
+
+/* Create a pseudo-element to maintain aspect ratio */
+#game-container::before {
+    content: "";
+    display: block;
+    padding-top: 175%; /* Aspect ratio (Height / Width * 100%) */
+}
+
+/* Room container holding background and assets */
+#room {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Background image and asset positioning */
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure assets align perfectly with the background */
+    z-index: 1;
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Clickable Areas for assets */
+#red-click-area,
+#yellow-click-area,
+#purple-click-area,
+#grey-click-area,
+#lazul-click-area {
+    position: absolute;
+    z-index: 3; /* Above assets but below particles */
+    cursor: pointer; /* Visual indication of interactivity */
+}
+
+/* Individual Click Area Positioning */
+#red-click-area {
+    top: 75%;
+    left: 3%;
+    width: 15%;
+    height: 10%;
+}
+
+#yellow-click-area {
+    top: 37%;
+    left: 20%;
+    width: 10%;
+    height: 10%;
+}
+
+#purple-click-area {
+    top: 16%;
+    left: 85%;
+    width: 15%;
+    height: 18%;
+}
+
+#grey-click-area {
+    top: 82%;
+    left: 61%;
+    width: 12%;
+    height: 7%;
+}
+
+#lazul-click-area {
+    top: 55%;
+    left: 45%;
+    width: 5%;
+    height: 6%;
+}
+
+/* Particles Effect */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4; /* Particles on top of assets */
+    pointer-events: none; /* No interaction with particles */
+}
+
+/* Sound animations (initially hidden) */
+.sound-animation {
+    position: absolute;
+    top: 0.5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4; /* Above assets but below particles */
+    display: none; /* Hidden by default */
+    object-fit: cover; /* Ensure animations align with the background */
+}
+
+/* Full-screen Outro Video */
+#outro-video {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 3; /* Above all other content */
+    display: none; /* Hidden until all songs are discovered */
+    transition: opacity 3s ease;
+    opacity: 0; /* Start hidden */ 
+}
+
+/* End Screen with 404 Message */
+#end-screen {
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: none; /* Show only after outro video ends */
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', monospace;
+    font-size: 1em;
+    z-index: 101; /* Above the outro video */
+    text-align: center;
+}
