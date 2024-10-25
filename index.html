@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>A********A</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Starting Screen -->
+    <div id="starting-screen">
+        <div id="starting-screen-content">
+            <h1>A * * * * * * * * A</h1>
+            <p>Ci sono 5 tracce disseminate per la stanza.<br><br>Tocca dove vuoi per iniziare.</p>
+        </div>
+    </div>
+
+    <!-- Outro Screen-->
+    <div id="end-screen">
+        <h1>4 0 4<br><br>@_p_a_v_e_ x @skumbaggy</h1>
+    </div>
+
+    <!-- Game Wrapper -->
+    <div id="game-wrapper">
+        <div id="game-container">
+    
+            <!-- Room and assets (your existing structure) -->
+            <div id="room">
+                <!-- Background video (with assets)-->
+                <video id="background" class="backgrond-video" autoplay muted loop>
+                    <source src="background/bedroom.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+    
+                <img src="animations/sound1.png" alt="Sound Animation 1" class="sound-animation" id="sound1">
+                <img src="animations/sound2.png" alt="Sound Animation 2" class="sound-animation" id="sound2">
+    
+                <!-- Clickable Areas -->
+                <div id="red-click-area"></div>
+                <div id="purple-click-area"></div>
+                <div id="grey-click-area"></div>
+                <div id="lazul-click-area"></div>
+                <div id="yellow-click-area"></div>
+            </div>
+    
+            <!-- Particle Effects -->
+            <div id="particles-js"></div>
+
+            <!-- Glitching Outro Video-->
+            <video id="outro-video" class="outro-video" autoplay muted>
+                <source src="animations/outro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Background Music (Looped) -->
+    <audio id="background-music" src="sound_effects/room.mp3" loop></audio>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
